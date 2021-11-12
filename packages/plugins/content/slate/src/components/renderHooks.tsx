@@ -14,7 +14,7 @@ type Data = {
   [key: string]: unknown;
 };
 const pickNativeProps = (data?: Data): Data => {
-  if (!isObject(data)) {
+  if (!data || !isObject(data)) {
     return {};
   }
   return Object.keys(data).reduce((acc, key) => {
@@ -129,7 +129,7 @@ export const useRenderLeave = (
             );
             if (matchingPlugin) {
               const { Component, getStyle } = matchingPlugin;
-              const dataRaw = leaveTypes[type]; // usually boolean
+              const dataRaw = leaveTypes[type as keyof typeof leaveTypes]; // usually boolean
               const data = isObject(dataRaw) ? dataRaw : {};
 
               const style = getStyle ? getStyle(data) : undefined;

@@ -47,14 +47,14 @@ export const Sidebar: React.SFC<{
   const actions = [
     // eslint-disable-next-line react/jsx-key
     { action: <UndoRedo labelRedo="redo" labelUndo="undo" /> },
-    zoomEnabled
-      ? { action: <Zoom labelZoomIn="zoom in" labelZoomOut="zoom out" /> }
-      : null,
-    { action: <ToggleEdit label={t(defaultLabels.edit)} /> },
-    { action: <ToggleInsert label={t(defaultLabels.insert)} /> },
-    { action: <ToggleLayout label={t(defaultLabels.layout)} /> },
-    { action: <ToggleResize label={t(defaultLabels.resize)} /> },
-    { action: <TogglePreview label={t(defaultLabels.preview)} /> },
+    ...(zoomEnabled
+      ? [{ action: <Zoom labelZoomIn="zoom in" labelZoomOut="zoom out" /> }]
+      : []),
+    { action: <ToggleEdit label={t(defaultLabels.edit) ?? ''} /> },
+    { action: <ToggleInsert label={t(defaultLabels.insert) ?? ''} /> },
+    { action: <ToggleLayout label={t(defaultLabels.layout) ?? ''} /> },
+    { action: <ToggleResize label={t(defaultLabels.resize) ?? ''} /> },
+    { action: <TogglePreview label={t(defaultLabels.preview) ?? ''} /> },
   ].filter(Boolean);
   return (
     <div
@@ -70,7 +70,7 @@ export const Sidebar: React.SFC<{
       }}
     >
       <div
-        ref={stickyNess.stickyElRef}
+        ref={stickyNess?.stickyElRef}
         style={{
           padding: 16,
           position: 'relative',

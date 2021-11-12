@@ -36,7 +36,7 @@ const StickyWrapper: React.FC<{
     };
     document.addEventListener('scroll', calc);
     window.addEventListener('resize', calc);
-    let observer: IntersectionObserver = null;
+    let observer: IntersectionObserver | null = null;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if ((global as any).IntersectionObserver) {

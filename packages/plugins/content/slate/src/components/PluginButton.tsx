@@ -1,3 +1,5 @@
+import type { DataTType } from '@react-page/editor';
+import { useUiTranslator } from '@react-page/editor';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Range, Transforms } from 'slate';
 import { useSlate } from 'slate-react';
@@ -6,32 +8,28 @@ import { getCurrentNodeDataWithPlugin } from '../hooks/useCurrentNodeDataWithPlu
 import usePluginIsActive from '../hooks/usePluginIsActive';
 import usePluginIsDisabled from '../hooks/usePluginIsDisabled';
 import useRemovePlugin from '../hooks/useRemovePlugin';
-
 import UniformsControls from '../pluginFactories/components/UniformsControls';
 import type {
   PluginButtonProps,
   SlatePluginDefinition,
 } from '../types/slatePluginDefinitions';
 import { useSetDialogIsVisible } from './DialogVisibleProvider';
-
 import ToolbarButton from './ToolbarButton';
-import { useUiTranslator } from '@react-page/editor';
-import type { Data } from '../types';
 
-type Props<T extends Data> = {
-  plugin: SlatePluginDefinition<T>;
+type Props = {
+  plugin: SlatePluginDefinition;
 } & PluginButtonProps;
 
-function PluginButton<T extends Data = unknown>(props: Props<T>) {
+function PluginButton(props: Props) {
   const { plugin } = props;
   const { t } = useUiTranslator();
   const hasControls = Boolean(plugin.controls);
 
   const [showControls, setShowControls] = useState(false);
   const storedPropsRef = useRef<{
-    selection: Range;
+    selection: Range | null;
     isActive: boolean;
-    data: T;
+    data: DataTType;
   }>();
 
   const shouldInsertWithText =
@@ -47,7 +45,7 @@ function PluginButton<T extends Data = unknown>(props: Props<T>) {
   const remove = useRemovePlugin(plugin);
   const editor = useSlate();
   const setIsVisible = useSetDialogIsVisible();
-  useEffect(() => setIsVisible(showControls), [showControls, setIsVisible]);
+  useEffect(() => setIsVisible?.(showControls), [showControls, setIsVisible]);
   const onClick = React.useCallback(
     (e: React.MouseEvent<HTMLElement>) => {
       e.preventDefault();
@@ -76,7 +74,9 @@ function PluginButton<T extends Data = unknown>(props: Props<T>) {
   const { controls } = plugin;
   const Controls = controls
     ? controls.type === 'autoform'
-      ? (props) => <UniformsControls {...props} schema={controls?.schema} />
+      ? (props: any) => (
+          <UniformsControls {...props} schema={controls?.schema} />
+        )
       : controls.Component
     : UniformsControls;
   const isDisabled = usePluginIsDisabled(plugin);
@@ -88,10 +88,12 @@ function PluginButton<T extends Data = unknown>(props: Props<T>) {
         disabled={isDisabled}
         isActive={isActive}
         icon={
-          plugin.icon ||
-          (plugin.pluginType === 'component' && plugin.deserialize.tagName)
+          plugin.icon ??
+          (plugin.pluginType === 'component'
+            ? plugin.deserialize?.tagName ?? ''
+            : '')
         }
-        toolTip={t(plugin.label)}
+        toolTip={t(plugin.label) ?? ''}
       />
 
       {hasControls || shouldInsertWithText ? (
@@ -113,7 +115,7 @@ function PluginButton<T extends Data = unknown>(props: Props<T>) {
             }
             remove();
           }}
-          isActive={storedPropsRef?.current?.isActive}
+          isActive={storedPropsRef?.current?.isActive ?? false}
           shouldInsertWithText={shouldInsertWithText}
           data={storedPropsRef?.current?.data}
           {...props}
