@@ -5,7 +5,7 @@ import {
   CardMedia,
   CardContent,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import type { CellPlugin } from '@react-page/editor';
 import slate, {
   DEFAULT_SLATE_PLUGIN_ID,

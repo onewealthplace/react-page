@@ -1,13 +1,15 @@
-import AppBar from '@material-ui/core/AppBar';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
+import AppBar from '@mui/material/AppBar';
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
 import GitHubForkRibbon from 'react-github-fork-ribbon';
-import IconButton from '@material-ui/core/IconButton';
-import type { Theme } from '@material-ui/core/styles';
-import { createStyles, makeStyles, useTheme } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@mui/material/IconButton';
+import type { Theme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
 import { VERSION } from '@react-page/editor';
 import React from 'react';
 import Navigation from './Navigation';
@@ -88,6 +90,7 @@ const PageLayout: React.FC = ({ children }) => {
               edge="start"
               onClick={handleDrawerToggle}
               className={classes.menuButton}
+              size="large"
             >
               <MenuIcon />
             </IconButton>
@@ -114,7 +117,7 @@ const PageLayout: React.FC = ({ children }) => {
               {drawer}
             </Drawer>
           </Hidden>
-          <Hidden xsDown implementation="css">
+          <Hidden smDown implementation="css">
             <Drawer
               classes={{
                 paper: classes.drawerPaper,

@@ -1,7 +1,7 @@
 import React from 'react';
-import { IconButton, Tooltip } from '@material-ui/core';
-import IconCollapse from '@material-ui/icons/KeyboardArrowDown';
-import IconRestore from '@material-ui/icons/KeyboardArrowUp';
+import { IconButton, Tooltip } from '@mui/material';
+import IconCollapse from '@mui/icons-material/KeyboardArrowDown';
+import IconRestore from '@mui/icons-material/KeyboardArrowUp';
 
 interface CollapseButtonProps {
   collapsed: boolean;
@@ -17,7 +17,12 @@ const CollapseButton: React.FC<CollapseButtonProps> = ({
   }, [collapsed, setCollapsed]);
   return (
     <Tooltip title={collapsed ? 'Restore Panel' : 'Collapse Panel'}>
-      <IconButton onClick={toggleCollapsed} aria-label="delete" color="default">
+      <IconButton
+        onClick={toggleCollapsed}
+        aria-label="delete"
+        color="default"
+        size="large"
+      >
         {collapsed ? <IconRestore /> : <IconCollapse />}
       </IconButton>
     </Tooltip>

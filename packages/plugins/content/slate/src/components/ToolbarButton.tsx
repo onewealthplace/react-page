@@ -2,8 +2,8 @@ import { lazyLoad } from '@react-page/editor';
 import React from 'react';
 import { ConditionalWrapper } from './ConditionalWrapper';
 
-const IconButton = lazyLoad(() => import('@material-ui/core/IconButton'));
-const Tooltip = lazyLoad(() => import('@material-ui/core/Tooltip'));
+const IconButton = lazyLoad(() => import('@mui/material/IconButton'));
+const Tooltip = lazyLoad(() => import('@mui/material/Tooltip'));
 
 const ToolbarButton: React.SFC<{
   icon: JSX.Element | string;
@@ -26,6 +26,7 @@ const ToolbarButton: React.SFC<{
           : { color: 'white' }
       }
       disabled={disabled}
+      size="large"
     >
       {icon}
     </IconButton>

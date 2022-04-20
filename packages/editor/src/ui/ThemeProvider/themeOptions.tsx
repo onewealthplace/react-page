@@ -1,2 +1,2 @@
-import type { ThemeOptions } from '@material-ui/core/styles/createTheme';
-export const themeOptions: ThemeOptions = {};
+import type { DeprecatedThemeOptions } from '@mui/material/styles';
+export const themeOptions: DeprecatedThemeOptions = {};

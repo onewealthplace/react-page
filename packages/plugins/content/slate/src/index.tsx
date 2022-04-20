@@ -28,7 +28,7 @@ export {
 };
 
 const SlateEditor = lazyLoad(() => import('./components/SlateEditor'));
-const Subject = lazyLoad(() => import('@material-ui/icons/Subject'));
+const Subject = lazyLoad(() => import('@mui/icons-material/Subject'));
 const Controls = lazyLoad(() => import('./components/Controls'));
 const SlateProvider = lazyLoad(() => import('./components/SlateProvider'));
 

@@ -1,5 +1,5 @@
-import { IconButton, Tooltip } from '@material-ui/core';
-import Icon from '@material-ui/icons/FileCopy';
+import { IconButton, Tooltip } from '@mui/material';
+import Icon from '@mui/icons-material/FileCopy';
 import React from 'react';
 import { useDuplicateCell, useUiTranslator } from '../../core/components/hooks';
 
@@ -9,7 +9,12 @@ export const DuplicateButton: React.FC<{ nodeId: string }> = React.memo(
     const { t } = useUiTranslator();
     return (
       <Tooltip title={t('Duplicate Plugin')}>
-        <IconButton onClick={duplicateCell} aria-label="delete" color="default">
+        <IconButton
+          onClick={duplicateCell}
+          aria-label="delete"
+          color="default"
+          size="large"
+        >
           <Icon />
         </IconButton>
       </Tooltip>

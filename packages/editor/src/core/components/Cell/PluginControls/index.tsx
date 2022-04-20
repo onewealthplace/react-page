@@ -1,6 +1,6 @@
-import type { Theme } from '@material-ui/core';
-import { Tab, Tabs } from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
+import type { Theme } from '@mui/material';
+import { Tab, Tabs } from '@mui/material';
+import { withStyles } from '@mui/styles';
 import React, { useState } from 'react';
 
 import { AutoformControls } from '../../../../ui';

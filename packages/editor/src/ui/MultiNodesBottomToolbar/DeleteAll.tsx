@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconButton, Tooltip } from '@material-ui/core';
-import Delete from '@material-ui/icons/Delete';
+import { IconButton, Tooltip } from '@mui/material';
+import Delete from '@mui/icons-material/Delete';
 import {
   useAllFocusedNodeIds,
   useRemoveMultipleNodeIds,
@@ -17,6 +17,7 @@ const DeleteAll: React.FC = () => {
         onClick={() => remove(focused)}
         aria-label="delete"
         color="secondary"
+        size="large"
       >
         <Delete />
       </IconButton>

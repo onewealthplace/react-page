@@ -19,11 +19,11 @@
     "clean": "rimraf \"lib\" && rimraf \"lib-es\" && rm -f *.tsbuildinfo"
   },
   "peerDependencies": {
-    "react": ">= 16.14",
-    "react-dom": ">= 16.14"
+    "react": ">= 17.0",
+    "react-dom": ">= 17.0"
   },
   "dependencies": {
-    "@material-ui/icons": "^4.2.1",
+    "@mui/icons-material": "5.2.1",
     "@react-page/editor": "0.0.0"
   },
   "publishConfig": {

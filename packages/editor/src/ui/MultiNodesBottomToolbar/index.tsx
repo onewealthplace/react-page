@@ -1,13 +1,19 @@
-import { Avatar, Grid, Typography } from '@material-ui/core';
+import { Avatar, Grid, Typography } from '@mui/material';
 import React from 'react';
 import {
   useAllFocusedNodeIds,
   useUiTranslator,
 } from '../../core/components/hooks';
 import { BottomToolbarDrawer } from '../BottomToolbar';
-import { ThemeProvider } from '../ThemeProvider';
+import type { Theme } from '../ThemeProvider';
+import { ThemeProvider, StyledEngineProvider } from '../ThemeProvider';
 import DeleteAll from './DeleteAll';
 import DuplicateAll from './DuplicateAll';
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
 
 export const MultiNodesBottomToolbar: React.FC = React.memo(() => {
   const { t } = useUiTranslator();

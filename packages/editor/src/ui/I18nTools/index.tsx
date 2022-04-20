@@ -1,5 +1,5 @@
-import { IconButton, Dialog } from '@material-ui/core';
-import Translate from '@material-ui/icons/Translate';
+import { IconButton, Dialog } from '@mui/material';
+import Translate from '@mui/icons-material/Translate';
 
 import React, { useState } from 'react';
 import SelectLang from './SelectLang';
@@ -29,6 +29,7 @@ export const I18nTools: React.FC<{
           onClick={() => setShowI18nDialog(true)}
           aria-label="i18n"
           color="secondary"
+          size="large"
         >
           <Translate />
         </IconButton>

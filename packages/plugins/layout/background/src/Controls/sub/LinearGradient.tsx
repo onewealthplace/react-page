@@ -1,8 +1,8 @@
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import Slider from '@material-ui/core/Slider';
-import Typography from '@material-ui/core/Typography';
-import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Slider from '@mui/material/Slider';
+import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
 import type { RGBColor } from '@react-page/editor';
 import { ColorPicker } from '@react-page/editor';
 import React from 'react';
@@ -54,7 +54,7 @@ class LinearGradientComponent extends React.Component<
   };
 
   handleChangeDegPreview =
-    (index: number) => (e: React.ChangeEvent, value: number) => {
+    (index: number) => (e: Event, value: number) => {
       this.props.onChangeGradientDegPreview &&
         this.props.onChangeGradientDegPreview(value, index);
     };
@@ -71,9 +71,9 @@ class LinearGradientComponent extends React.Component<
   };
 
   handleChangeOpacityPreview =
-    (index: number) => (e: React.ChangeEvent, value: number) => {
+    (index: number) => (event: Event, value: number | number[]) => {
       this.props.onChangeGradientOpacityPreview &&
-        this.props.onChangeGradientOpacityPreview(value, index);
+        this.props.onChangeGradientOpacityPreview(value as number, index);
     };
 
   handleChangeGradientColor =
@@ -246,6 +246,7 @@ class LinearGradientComponent extends React.Component<
                       <IconButton
                         aria-label="Delete"
                         onClick={this.removeColor(i, cpIndex)}
+                        size="large"
                       >
                         <DeleteIcon />
                       </IconButton>
@@ -264,6 +265,7 @@ class LinearGradientComponent extends React.Component<
                 <IconButton
                   aria-label="Delete"
                   onClick={this.removeGradient(i)}
+                  size="large"
                 >
                   <DeleteIcon />
                 </IconButton>

@@ -1,5 +1,5 @@
 // The editor core
-import type { CSSProperties } from '@material-ui/styles';
+import type { CSSProperties } from '@mui/styles';
 import type { CellPlugin, Value } from '@react-page/editor';
 import Editor from '@react-page/editor';
 
