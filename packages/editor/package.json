@@ -1,6 +1,6 @@
 {
   "name": "@react-page/editor",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "author": "Marco Wettstein",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -45,9 +45,9 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "redux-undo": "^1.0.1",
-    "uniforms": "^2.6.0 || ^3.0.0",
-    "uniforms-bridge-json-schema": "^2.6.0 || ^3.0.0",
-    "uniforms-material": "^2.6.0 || ^3.0.0"
+    "uniforms": "^3.8.1",
+    "uniforms-bridge-json-schema": "^3.8.1",
+    "uniforms-material": "^3.8.1"
   },
   "devDependencies": {
     "@types/react-color": "^3.0.4"
