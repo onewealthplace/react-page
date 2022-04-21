@@ -30,6 +30,6 @@
     "@react-page/editor": "0.0.0"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://nexus.1wplace.com/repository/owp-npm/"
   }
 }

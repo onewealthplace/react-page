@@ -33,6 +33,6 @@
   },
   "devDependencies": {},
   "publishConfig": {
-    "access": "public"
+    "registry": "https://nexus.1wplace.com/repository/owp-npm/"
   }
 }

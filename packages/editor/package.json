@@ -53,6 +53,6 @@
     "@types/react-color": "^3.0.4"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://nexus.1wplace.com/repository/owp-npm/"
   }
 }

@@ -50,7 +50,7 @@
     "@xmldom/xmldom": "^0.8.1"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://nexus.1wplace.com/repository/owp-npm/"
   },
   "devDependencies": {
     "@types/is-hotkey": "0.1.1",

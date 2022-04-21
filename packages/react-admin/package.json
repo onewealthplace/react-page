@@ -33,6 +33,6 @@
     "uniforms": "^3.2.0"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://nexus.1wplace.com/repository/owp-npm/"
   }
 }
