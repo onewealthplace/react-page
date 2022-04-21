@@ -1,6 +1,6 @@
 {
   "name": "@react-page/plugins-html5-video",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "main": "./lib/index.js",
   "module": "./lib-es/index.js",
   "sideEffects": false,
@@ -28,7 +28,7 @@
     "react-dom": ">= 17.0"
   },
   "dependencies": {
-    "@react-page/editor": "^5.0.0"
+    "@react-page/editor": "^5.0.1"
   },
   "publishConfig": {
     "registry": "https://nexus.1wplace.com/repository/owp-npm/"
