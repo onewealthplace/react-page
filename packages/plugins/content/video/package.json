@@ -1,6 +1,6 @@
 {
   "name": "@react-page/plugins-video",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "main": "./lib/index.js",
   "module": "./lib-es/index.js",
   "sideEffects": false,
@@ -27,7 +27,7 @@
     "react-dom": ">= 17.0"
   },
   "dependencies": {
-    "@react-page/editor": "^5.0.2",
+    "@react-page/editor": "^5.0.3",
     "react-player": "^1.13.0"
   },
   "publishConfig": {

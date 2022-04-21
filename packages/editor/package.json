@@ -1,6 +1,6 @@
 {
   "name": "@react-page/editor",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "author": "Marco Wettstein",
   "license": "MIT",
   "main": "./lib/index.js",
