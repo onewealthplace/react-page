@@ -1,6 +1,6 @@
 {
   "name": "@react-page/plugins-slate",
-  "version": "0.0.0",
+  "version": "5.0.0",
   "main": "./lib/index.js",
   "module": "./lib-es/index.js",
   "sideEffects": false,
@@ -21,17 +21,18 @@
     "clean": "rimraf \"lib\" && rimraf \"lib-es\" && rm -f *.tsbuildinfo"
   },
   "peerDependencies": {
-    "@mui/icons-material": "*",
-    "@mui/material": "*",
     "@emotion/react": "*",
     "@emotion/styled": "*",
+    "@mui/icons-material": "*",
+    "@mui/material": "*",
     "@types/react": "*",
     "react": ">= 17.0",
     "react-dom": ">= 17.0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.8",
-    "@react-page/editor": "0.0.0",
+    "@react-page/editor": "^5.0.0",
+    "@xmldom/xmldom": "^0.8.1",
     "cssstyle": "^2.3.0",
     "deep-rename-keys": "^0.2.1",
     "is-hotkey": "^0.1.6",
@@ -46,8 +47,7 @@
     "slate": "^0.66.5",
     "slate-hyperscript": "^0.66.0",
     "slate-react": "^0.65.3",
-    "slate-react-presentation": "^0.1.1",
-    "@xmldom/xmldom": "^0.8.1"
+    "slate-react-presentation": "^0.1.1"
   },
   "publishConfig": {
     "registry": "https://nexus.1wplace.com/repository/owp-npm/"

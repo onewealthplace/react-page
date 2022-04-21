@@ -1,6 +1,6 @@
 {
   "name": "@react-page/plugins-spacer",
-  "version": "0.0.0",
+  "version": "5.0.0",
   "main": "./lib/index.js",
   "module": "./lib-es/index.js",
   "sideEffects": false,
@@ -18,20 +18,19 @@
     "clean": "rimraf \"lib\" && rimraf \"lib-es\" && rm -f *.tsbuildinfo"
   },
   "peerDependencies": {
-    "react": ">= 17.0",
-    "react-dom": ">= 17.0",
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
     "@mui/icons-material": "*",
     "@mui/material": "*",
     "@mui/styles": "*",
-    "@emotion/react": "*",
-    "@emotion/styled": "*"
+    "react": ">= 17.0",
+    "react-dom": ">= 17.0"
   },
   "dependencies": {
-    "@react-page/editor": "0.0.0",
+    "@react-page/editor": "^5.0.0",
     "classnames": "2.2.6",
     "react-resizable": "^1.11.0"
   },
-  "devDependencies": {},
   "publishConfig": {
     "registry": "https://nexus.1wplace.com/repository/owp-npm/"
   }

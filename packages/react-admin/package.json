@@ -1,6 +1,6 @@
 {
   "name": "@react-page/react-admin",
-  "version": "0.0.0",
+  "version": "5.0.0",
   "main": "./lib/index.js",
   "module": "./lib-es/index.js",
   "sideEffects": false,
@@ -15,10 +15,10 @@
     "clean": "rimraf \"lib\" && rimraf \"lib-es\" && rm -f *.tsbuildinfo"
   },
   "peerDependencies": {
-    "@mui/icons-material": "*",
-    "@mui/material": "*",
     "@emotion/react": "*",
     "@emotion/styled": "*",
+    "@mui/icons-material": "*",
+    "@mui/material": "*",
     "react": ">= 17.0",
     "react-admin": "^3.0.0",
     "react-dom": ">= 17.0",
@@ -26,7 +26,7 @@
     "uniforms": "*"
   },
   "dependencies": {
-    "@react-page/editor": "0.0.0"
+    "@react-page/editor": "^5.0.0"
   },
   "devDependencies": {
     "react-admin": "^3.12.2",
